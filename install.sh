@@ -22,7 +22,7 @@
 set -e
 set -o pipefail
 
-DOT_FILE_DIRECTORY="${PWD}/dotfiles"
+DOT_FILE_DIRECTORY="${PWD}"
 
 PIPE_TO_FILE=0
 LOG_FILE="./install-log.txt"
