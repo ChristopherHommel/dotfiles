@@ -22,8 +22,6 @@
 set -e
 set -o pipefail
 
-DOT_FILE_DIRECTORY="${PWD}"
-
 PIPE_TO_FILE=0
 LOG_FILE="./install-log.txt"
 
@@ -78,7 +76,7 @@ copy_tmux() {
     fi
 
     write_log "Setting up .tmux.conf"
-    cp "$DOT_FILE_DIRECTORY/.tmux.conf" ~/.tmux.conf
+    cp "./.tmux.conf" ~/.tmux.conf
 
     return 0
 }
