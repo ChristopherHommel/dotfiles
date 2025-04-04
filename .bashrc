@@ -70,8 +70,10 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
-export FZF_DEFAULT_OPTS="--layout=reverse --border=bold --border=rounded --margin=3% --color=dark --height=80% --width=80% --border=double --info=inline --preview-window=wrap"
-bind -x '"\C-f": "fzf"'
+# FZF setup
+export FZF_DEFAULT_OPTS="--layout=reverse --border=bold --border=rounded --margin=3% --color=dark --border=double --info=inline --preview-window=wrap"
+bind -x '"\C-f": "fzf --height 80% --width 80% --border=double --info=inline --preview-window=wrap"'
+
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
