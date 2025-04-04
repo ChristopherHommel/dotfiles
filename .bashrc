@@ -72,7 +72,7 @@ fi
 
 # FZF setup
 export FZF_DEFAULT_OPTS="--layout=reverse --preview --border=bold --border=rounded --margin=3% --color=dark --border=double --info=inline --preview='cat {}'"
-bind -x '"\C-f": "fzf"'
+bind -x '"\C-f": "vi $(fzf)"'
 
 
 # colored GCC warnings and errors
