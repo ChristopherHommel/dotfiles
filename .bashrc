@@ -71,7 +71,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # FZF setup
-export FZF_DEFAULT_OPTS="--layout=reverse --border=bold --border=rounded --margin=3% --color=dark --border=double --info=inline --preview-window=wrap"
+export FZF_DEFAULT_OPTS="--layout=reverse --preview --border=bold --border=rounded --margin=3% --color=dark --border=double --info=inline --preview-window=wrap"
 bind -x '"\C-f": "fzf"'
 
 
