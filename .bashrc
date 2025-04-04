@@ -70,24 +70,8 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
-# fzf to vi
-# Make sure to set vi aliases before this
-fzf-to-vi() {
-  local file
-  file=$(find . -type f -not -path "*/node_modules/*" -not -path "*/\.*" |
-         fzf --height 50% --reverse --border --preview 'bat --color=always --style=numbers --line-range=:500 {} 2>/dev/null || cat {} 2>/dev/null || echo "Binary file"')
-
-  if [[ -n "$file" ]]; then
-    # Open selected file in vi
-    vi "$file"
-  fi
-
-  # Redraw the prompt
-  bind '"\er": redraw-current-line'
-  bind '"\e^": magic-space'
-}
-
-bind -x '"\C-f": "fzf-to-vi"'
+set FZF_DEFAULT_OPTS "--layout=reverse --border=bold --border=rounded --margin=3% --color=dark"
+bind -x '"\C-f": "fzf"'
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
