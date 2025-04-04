@@ -103,13 +103,53 @@ install_tmux(){
     return 0
 }
 
+install_profile(){
+    if [ -f ~/.profile ]; then
+        write_log "Removing profile"
+        rm ~/.profile
+    fi
+
+    write_log "Setting up .profile"
+    cp "./.profile" ~/.profile
+
+    return 0;
+}
+
+install_bash_rc(){
+    if [ -f ~/.bashrc ]; then
+        write_log "Removing bashrc"
+        rm ~/.bashrc
+    fi
+
+    write_log "Setting up .bashrc"
+    cp "./.bashrc" ~/.bashrc
+
+    return 0;
+}
+
+install_git(){
+    if [ -f ~/.gitconfig ]; then
+        write_log "Removing gitconfig"
+        rm ~/.gitconfig
+    fi
+
+    write_log "Setting up .gitconfig"
+    cp "./.gitconfig" ~/.gitconfig
+
+    return 0;
+}
+
 reload_source(){
+    source ~/.profile
     source ~/.bashrc
 
     return 0
 }
 
 main(){
+    install_profile
+    install_bash_rc
+    install_git
     install_tmux
 
     reload_source
