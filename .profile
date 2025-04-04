@@ -29,7 +29,7 @@ fi
 
 
 # Load tmux if it exists
-if [ -f ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/run.sh]; then
+if [ -f ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/run.sh ]; then
     chmod +x ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/run.sh
     ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/run.sh
 fi
