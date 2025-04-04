@@ -30,6 +30,10 @@ fi
 
 # Load tmux if it exists
 if [ -f ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/run.sh ]; then
-    chmod +x ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/run.sh
-    ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/run.sh
+
+    cd ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/
+    chmod +x ./run.sh
+    ./run.sh
+        
+    cd $HOME
 fi
