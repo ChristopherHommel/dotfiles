@@ -70,7 +70,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias egrep='egrep --color=auto'
 fi
 
-set FZF_DEFAULT_OPTS "--layout=reverse --border=bold --border=rounded --margin=3% --color=dark"
+export FZF_DEFAULT_OPTS="--layout=reverse --border=bold --border=rounded --margin=3% --color=dark --height=80% --width=80% --border=double --info=inline --preview-window=wrap"
 bind -x '"\C-f": "fzf"'
 
 # colored GCC warnings and errors
