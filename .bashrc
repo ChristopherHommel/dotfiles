@@ -71,7 +71,8 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # fzf to vi
-fzf-vi-widget() {
+# Make sure to set vi aliases before this
+fzf-to-vi() {
   local file
   file=$(find . -type f -not -path "*/node_modules/*" -not -path "*/\.*" |
          fzf --height 50% --reverse --border --preview 'bat --color=always --style=numbers --line-range=:500 {} 2>/dev/null || cat {} 2>/dev/null || echo "Binary file"')
@@ -86,7 +87,7 @@ fzf-vi-widget() {
   bind '"\e^": magic-space'
 }
 
-bind -x '"\C-f": "fzf-vi-widget"'
+bind -x '"\C-f": "fzf-to-vi"'
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
