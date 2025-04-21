@@ -25,4 +25,16 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
 . "$HOME/.cargo/env"
+
+if [ -f ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/run.sh ]; then
+
+    cd ~/dev-dependencies/tmux_sessions/repo/tmux-sessions/
+    chmod +x ./run.sh
+    ./run.sh
+
+    cd $HOME
+
+    tmux a
+fi
